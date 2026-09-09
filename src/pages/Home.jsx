@@ -8,18 +8,21 @@ function Home() {
     { image: "/adobo.jpg",
       category: "Filipino",
       title: "Adobo",
+      time: "1 hour",
       description:
         "Pork marinated and simmered in soy sauce, vinegar, garlic, and spices. It has a savory, tangy, and slightly sweet flavor."
     },
     {image :"/letson.jpg",
       category: "Main",
       title: "Lechon",
+      time: "3 hours",
       description:
         "Crispy, golden-brown roasted pork with juicy, tender meat."
     },
     {image :"/Mango Float.jpg",
       category: "Dessert",
       title: "Mango Float",
+      time: "50 min",
       description:
         "Creamy layers of ripe mangoes, graham crackers, and sweet cream."
     }
