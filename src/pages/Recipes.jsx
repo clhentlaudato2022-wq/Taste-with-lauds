@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import RecipeCard from "../components/RecipeCard";
@@ -21,8 +21,7 @@ function Recipes() {
 
   const categoryFromUrl = searchParams.get("category") || "All";
 
-  const [category, setCategory] = useState(categoryFromUrl);
-
+  const [category, setCategory] = useState("All");
   const recipes = [
   
     { image :"/palaka.jpg",
@@ -322,26 +321,16 @@ return (
       <section className="recipe-page-section">
 
         <div className="category-buttons">
-
-          {categories.map((item) => (
-            <button
-              key={item}
-              className={category === item ? "category-active" : ""}
-              onClick={() => {
-                setCategory(item);
-
-                if (item === "All") {
-                  setSearchParams({});
-                } else {
-                  setSearchParams({ category: item });
-                }
-              }}
-            >
-              {item}
-            </button>
-          ))}
-
-        </div>
+  {categories.map((item) => (
+    <button
+      key={item}
+      className={category === item ? "category-active" : ""}
+      onClick={() => setCategory(item)}
+    >
+      {item}
+    </button>
+  ))}
+</div>
 
         <div className="recipe-grid">
 
