@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import RecipeCard from "../components/RecipeCard";
 
 function Recipes() {
@@ -25,7 +26,7 @@ function Recipes() {
   const recipes = [
   
     { image :"/palaka.jpg",
-      category: "Filipino",
+      alt: "Filipino",
       title: "Palakang Adobo",
       time: "30 min",
       description:
@@ -33,7 +34,7 @@ function Recipes() {
     },
     {
       image :"/papaitan.jpg",
-      category: "Filipino",
+      alt: "Filipino",
       title: "Papaitan",
       time: "1 hours",
       description:
@@ -41,7 +42,7 @@ function Recipes() {
     },
     {
       image :"/bolinao.jpg",
-      category: "Filipino",
+      alt: "Filipino",
       title: "Kinilaw na Bolinao",
       time: "25 min",
       description:
@@ -49,7 +50,7 @@ function Recipes() {
     },
     {
   image: "/adobo.jpg",
-  category: "Filipino",
+  alt: "Filipino",
   title: "Adobo",
   time: "1 hour",
   description:
@@ -57,14 +58,14 @@ function Recipes() {
 
 },
     { image :"/sisig.jpg",
-      category: "Filipino",
+      alt: "Filipino",
       title: "Chicken Sisig",
       time: "30 min",
       description:
         "Crispy and savory chopped meat mixed with onions, chili, and seasonings for a flavorful Filipino favorite."
     },
     { image :"/pares.jpg",
-      category: "Filipino",
+      alt: "Filipino",
       title: "Pares ni Diwata",
       time: "30 min",
       description:
@@ -72,42 +73,42 @@ function Recipes() {
     },
     
     { image :"/spag.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Filipino Spaghetti",
       time: "40 min",
       description:
         "Sweet-style spaghetti with banana ketchup, tomato sauce, ground meat, and sliced hotdogs.."
     },
     {  image :"/creamy.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Filipino Style Carbonara ",
       time: "30 min",
       description:
         "Creamy pasta with bacon or ham, mushrooms, and cheese"
     },
     {  image :"/maca.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Filipino Sweet-Style Macaroni",
       time: "30 min",
       description:
         "Creamy macaroni with cheese, milk, and sometimes ham or hotdogs."
     },
     {  image :"/tuna.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Filipino-Style Tuna Pasta",
       time: "30 min",
       description:
         "Pasta with canned tuna, garlic, cream, and cheese"
     },
      {  image :"/palabok.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Pancit Palabok ",
       time: "30 min",
       description:
         "Rice noodles topped with savory shrimp sauce, pork, shrimp, egg, and crispy toppings."
     },
     {  image :"/pancit.jpg",
-      category: "Pasta",
+      alt: "Pasta",
       title: "Pancit Canton ",
       time: "20 min",
       description:
@@ -115,42 +116,42 @@ function Recipes() {
     },
     {
       image :"/Lech flan.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Leche Flan ",
       time: "30 min",
       description:
         "Creamy and smooth caramel custard with a rich, sweet flavor."
     },
     { image :"/Halo-Halo.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Halo-Halo",
       time: "20 min",
       description:
         "A refreshing mix of shaved ice, milk, sweet fruits, and delicious toppings."
     },
     { image :"/Mango Float.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Mango Float ",
       time: "50 min",
       description:
         "Creamy layers of ripe mangoes, graham crackers, and sweet cream."
     },
     { image :"/Ube Halaya.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Ube Halaya",
       time: "30 min",
       description:
         "Smooth and rich purple yam dessert with a sweet, creamy taste."
     },
     { image :"/Turon.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Turon",
       time: "20 min",
       description:
         "Crispy fried banana rolls coated with caramelized sugar"
     },
     { image :"/Buko Pandan.jpg",
-      category: "Dessert",
+      alt: "Dessert",
       title: "Buko Pandan",
       time: "30 min",
       description:
@@ -158,7 +159,7 @@ function Recipes() {
     },
   
     {image :"/mango.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: "Mango Smoothie",
       time: "20 min",
       description:
@@ -166,7 +167,7 @@ function Recipes() {
     },
     {
       image :"/sunset.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: " Philippine Sunset Cooler",
       time: "20 min",
       description:
@@ -174,7 +175,7 @@ function Recipes() {
     },
      {
       image :"/ube.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: "Ube Coconut Cloud",
       time: "20 min",
       description:
@@ -182,7 +183,7 @@ function Recipes() {
     },
     {
       image :"/barako.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: "Ube Barako Latte",
       time: "20 min",
       description:
@@ -190,7 +191,7 @@ function Recipes() {
     },
     {
       image :"/shake.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: "Turon Shake",
       time: "20 min",
       description:
@@ -198,14 +199,14 @@ function Recipes() {
     },
     {
       image :"/gulaman.jpg",
-      category: "Drinks",
+      alt: "Drinks",
       title: "Sagot Gulaman",
       time: "20 min",
       description:
         "resh Philippine mango blended with ice and milk; sweet and refreshing."
     },
 { image :"/letson.jpg",
-      category: "Main",
+      alt: "Main",
       title: "Lechon",
       time: "3 hours",
       description:
@@ -215,7 +216,7 @@ function Recipes() {
 
 {
   image: "/Sin.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Sinigang",
   time: "1 hour",
   description:
@@ -223,7 +224,7 @@ function Recipes() {
 },
 {
   image: "/kare.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Kare-Kare",
   time: "3 hours",
   description:
@@ -233,7 +234,7 @@ function Recipes() {
 
 {
   image: "/lupak.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Nilupak na Saging",
   time: "20 min",
   description:
@@ -241,7 +242,7 @@ function Recipes() {
 },
 {
   image: "/ubod.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Ubod ng Saging with Manok",
   time: "45 min",
   description:
@@ -249,7 +250,7 @@ function Recipes() {
 },
 {
   image: "/bibingka.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Bibingka",
   time: "40 min",
   description:
@@ -258,7 +259,7 @@ function Recipes() {
 
 {
   image: "/calamansi.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Calamansi Juice",
   time: "10 min",
   description:
@@ -266,7 +267,7 @@ function Recipes() {
 },
 {
   image: "/monggo.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Monggo",
   time: "30 min",
   description:
@@ -274,7 +275,7 @@ function Recipes() {
 },
 {
   image: "/buko.jpg",
-  category: "Main",
+  alt: "Main",
   title: "Buko Juice",
   time: "10 min",
   description:
@@ -295,7 +296,17 @@ function Recipes() {
       ? recipes
       : recipes.filter((recipe) => recipe.category === category);
 
-  return (
+return (
+  <>
+    <Helmet>
+      <title>Easy Filipino Recipes | Taste with Lauds</title>
+
+      <meta
+        name="description"
+        content="Explore easy Filipino recipes, pasta dishes, desserts, main dishes, and refreshing drinks from Taste with Lauds."
+      />
+    </Helmet>
+
     <div className="page">
 
       <section className="page-header">
@@ -305,10 +316,11 @@ function Recipes() {
         <h1>Our Recipes</h1>
 
         <p>
-         Explore easy Filipino recipes, pasta dishes, desserts, main dishes, and refreshing drinks from Taste with Lauds.
+          Explore easy Filipino recipes, pasta dishes, desserts, main dishes, and refreshing drinks from Taste with Lauds.
         </p>
 
       </section>
+
 
 
       <section className="recipe-page-section">
@@ -320,13 +332,13 @@ function Recipes() {
               key={item}
               className={category === item ? "category-active" : ""}
               onClick={() => {
-               setCategory(item);
+                setCategory(item);
 
-             if (item === "All") {
-             setSearchParams({});
-             } else {
-             setSearchParams({ category: item });
-             }
+                if (item === "All") {
+                  setSearchParams({});
+                } else {
+                  setSearchParams({ category: item });
+                }
               }}
             >
               {item}
@@ -349,7 +361,8 @@ function Recipes() {
       </section>
 
     </div>
-  );
+  </>
+);
 }
 
 export default Recipes;

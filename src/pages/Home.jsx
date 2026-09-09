@@ -1,26 +1,30 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import RecipeCard from "../components/RecipeCard";
 import BlogCard from "../components/BlogCard";
 
 function Home() {
 
   const recipes = [
-    { image: "/adobo.jpg",
-      category: "Filipino",
+    {
+      image: "/adobo.jpg",
+      alt: "Filipino Adobo dish",
       title: "Adobo",
       time: "1 hour",
       description:
         "Pork marinated and simmered in soy sauce, vinegar, garlic, and spices. It has a savory, tangy, and slightly sweet flavor."
     },
-    {image :"/letson.jpg",
-      category: "Main",
+    {
+      image: "/letson.jpg",
+      alt: "Filipino Lechon dish",
       title: "Lechon",
       time: "3 hours",
       description:
         "Crispy, golden-brown roasted pork with juicy, tender meat."
     },
-    {image :"/Mango Float.jpg",
-      category: "Dessert",
+    {
+      image: "/Mango Float.jpg",
+      alt: "Filipino Mango Float dessert",
       title: "Mango Float",
       time: "50 min",
       description:
@@ -29,20 +33,23 @@ function Home() {
   ];
 
   const blogs = [
-    { image: "/5.png",
-      category: "Food Guide",
+    {
+      image: "/5.png",
+      alt: "Filipino dishes and food guide",
       title: "5 Filipino Dishes You Need to Try",
       description:
         "The Philippines has a rich and diverse food culture. Filipino cuisine is known for its bold flavors, creative use of local ingredients, and dishes that are often shared with family and friends. Here are five Filipino dishes and desserts that everyone should try"
     },
-    {image: "/pp.jpg",
-      category: "Cooking Tips",
+    {
+      image: "/pp.jpg",
+      alt: "Cooking tips for beginners",
       title: "Simple Cooking Tips Everyone Should Know",
       description:
         "Cooking is more than simply following a recipe. It requires preparation, patience, proper techniques, and attention to detail. Whether you are a beginner or already have some cooking experience, following good cooking habits can help you prepare food that is safer, tastier, and more enjoyable. Here are some useful cooking tips that can improve your skills in the kitchen"
     },
-    {   image: "/kani.jpg",
-      category: "Desserts",
+    {
+      image: "/kani.jpg",
+      alt: "Filipino dessert ideas",
       title: "Easy Desserts for Your Sweet Cravings",
       description:
         "A simple and delicious Filipino dessert made from mashed ripe bananas, sugar, butter, and grated coconut. It is soft, sweet, and perfect for merienda or dessert."
@@ -51,7 +58,14 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Filipino Recipes and Food Stories | Taste with Lauds</title>
 
+        <meta
+          name="description"
+          content="Discover easy Filipino recipes, cooking tips, desserts, and food stories from Taste with Lauds."
+        />
+      </Helmet>
 
       <section className="hero">
 

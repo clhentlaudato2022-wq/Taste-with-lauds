@@ -20,8 +20,10 @@ function RecipeCard({ image, category, title, time, description, showViewRecipe 
 
       <div className="recipe-image">
         {image ? (
-          <img src={image} alt={title} />
-        ) : (
+      <img
+     src={image}
+     alt={`Filipino ${title} dish`}
+/>        ) : (
           <div className="image-placeholder">
             <span>📷</span>
             <p>Recipe Photo</p>

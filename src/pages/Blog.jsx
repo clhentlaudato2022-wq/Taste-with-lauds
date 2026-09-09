@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 function Blog() {
   const [selectedPost, setSelectedPost] = useState(null);
@@ -124,6 +125,13 @@ Kinilaw na Bolinao is a fresh seafood dish made from raw Bolinao fish cured in v
 Both dishes are worth trying for anyone who wants to discover new and authentic Filipino flavors.`,
     },
   ];
+  <Helmet>
+  <title>Filipino Food Blog and Cooking Tips | Taste with Lauds</title>
+  <meta
+    name="description"
+    content="Read Filipino food stories, cooking tips, dessert ideas, and food inspiration from Taste with Lauds."
+  />
+</Helmet>
 
   return (
     <div className="page">
