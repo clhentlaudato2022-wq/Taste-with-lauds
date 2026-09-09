@@ -235,7 +235,7 @@ function Recipes() {
   image: "/kare.jpg",
   alt: "Main",
   category: "Main",
-  tItle: "Kare-Kare",
+  title: "Kare-Kare",
   time: "3 hours",
   description:
     "A creamy Filipino stew made with meat, vegetables, and rich peanut sauce."
@@ -245,7 +245,7 @@ function Recipes() {
 {
   image: "/lupak.jpg",
   alt: "Main",
-  Category: "Main",
+  category: "Main",
   title: "Nilupak na Saging",
   time: "20 min",
   description:
