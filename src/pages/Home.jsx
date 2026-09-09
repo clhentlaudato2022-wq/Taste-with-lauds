@@ -5,19 +5,19 @@ import BlogCard from "../components/BlogCard";
 function Home() {
 
   const recipes = [
-    { image: "/public/adobo.jpg",
+    { image: "/adobo.jpg",
       category: "Filipino",
       title: "Adobo",
       description:
         "Pork marinated and simmered in soy sauce, vinegar, garlic, and spices. It has a savory, tangy, and slightly sweet flavor."
     },
-    {image :"/public/letson.jpg",
+    {image :"/letson.jpg",
       category: "Main",
       title: "Lechon",
       description:
         "Crispy, golden-brown roasted pork with juicy, tender meat."
     },
-    {image :"/public/Mango Float.jpg",
+    {image :"/Mango Float.jpg",
       category: "Dessert",
       title: "Mango Float",
       description:
