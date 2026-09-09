@@ -52,7 +52,6 @@ function Home() {
   return (
     <>
 
-      {/* HERO */}
 
       <section className="hero">
 
@@ -92,7 +91,6 @@ function Home() {
 
           <div className="hero-image">
 
-            {/* PUT YOUR LARGE HERO FOOD PHOTO HERE */}
 
             <div className="hero-placeholder">
     <img src="/logo.png" alt="Delicious Filipino food" />
@@ -105,7 +103,6 @@ function Home() {
       </section>
 
 
-      {/* CRAVINGS */}
 
       <section className="craving-section">
 
@@ -160,7 +157,6 @@ function Home() {
       </section>
 
 
-      {/* FEATURED RECIPES */}
 
       <section className="recipes-section">
 
@@ -201,7 +197,6 @@ function Home() {
       </section>
 
 
-      {/* ABOUT */}
 
       <section className="about-section">
 
@@ -209,7 +204,6 @@ function Home() {
 
           <div className="about-image">
 
-            {/* PUT KITCHEN PHOTO HERE */}
 
             <div className="about-placeholder">
           <img src="/bring.jpg" alt="Food and family" />
@@ -247,7 +241,6 @@ function Home() {
       </section>
 
 
-      {/* BLOG */}
 
       <section className="blog-section">
 
@@ -286,8 +279,6 @@ function Home() {
 
       </section>
 
-
-      {/* NEWSLETTER */}
 
       <section className="newsletter-section">
 

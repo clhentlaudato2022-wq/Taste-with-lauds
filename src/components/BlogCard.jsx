@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 
-function BlogCard({ image, category, title, description }) {
+function BlogCard({ image, alt, category, title, description }) {
   return (
     <article className="blog-card">
 
       <div className="blog-image">
 
-        {/* PUT BLOG PHOTO HERE */}
-
         {image ? (
-          <img src={image} alt={title} />
+          <img src={image} alt={alt} />
         ) : (
           <div className="image-placeholder">
             <span>📷</span>
