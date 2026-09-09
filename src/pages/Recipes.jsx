@@ -9,15 +9,16 @@ function Recipes() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state?.scrollPosition !== undefined) {
-      requestAnimationFrame(() => {
-        window.scrollTo(
-          0,
-          location.state.scrollPosition
-        );
-      });
-    }
-  }, [location.state]);
+  const savedPosition = sessionStorage.getItem("recipeScrollPosition");
+
+  if (savedPosition !== null) {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, Number(savedPosition));
+    });
+
+    sessionStorage.removeItem("recipeScrollPosition");
+  }
+}, []);
 
   const categoryFromUrl = searchParams.get("category") || "All";
 
