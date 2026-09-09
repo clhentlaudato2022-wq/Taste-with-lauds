@@ -295,7 +295,6 @@ function Recipes() {
     category === "All"
       ? recipes
       : recipes.filter((recipe) => recipe.category === category);
-
 return (
   <>
     <Helmet>
@@ -310,18 +309,15 @@ return (
     <div className="page">
 
       <section className="page-header">
-
         <p className="section-label">FROM THE KITCHEN</p>
 
         <h1>Our Recipes</h1>
 
         <p>
-          Explore easy Filipino recipes, pasta dishes, desserts, main dishes, and refreshing drinks from Taste with Lauds.
+          Explore easy Filipino recipes, pasta dishes, desserts,
+          main dishes, and refreshing drinks from Taste with Lauds.
         </p>
-
       </section>
-
-
 
       <section className="recipe-page-section">
 
@@ -363,6 +359,7 @@ return (
     </div>
   </>
 );
+
 }
 
 export default Recipes;
