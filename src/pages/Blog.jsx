@@ -6,7 +6,7 @@ function Blog() {
   const posts = [
     {
       image: "/5.png",
-      category: "Food Guide",
+      alt: "Food Guide",
       title: "5 Filipino Dishes You Need to Try",
       description:
         "The Philippines has a rich and diverse food culture. Filipino cuisine is known for its bold flavors, creative use of local ingredients, and dishes that are often shared with family and friends. Here are five Filipino dishes and desserts that everyone should try",
@@ -34,7 +34,7 @@ These five foods show the variety of Filipino cuisine, from savory dishes to ref
     },
 
     { image: "/pp.jpg",
-      category: "Cooking Tips",
+      alt: "Cooking Tips",
       title: "Simple Cooking Tips Everyone Should Know",
       description:
         "Cooking is more than simply following a recipe. It requires preparation, patience, proper techniques, and attention to detail. Whether you are a beginner or already have some cooking experience, following good cooking habits can help you prepare food that is safer, tastier, and more enjoyable. Here are some useful cooking tips that can improve your skills in the kitchen",
@@ -80,7 +80,7 @@ Good cooking takes practice. Do not be afraid of making mistakes because they ca
 
     },
     {  image: "/kani.jpg",
-      category: "Desserts",
+      alt: "Desserts",
       title: "Easy Desserts for Your Sweet Cravings",
       description:
         "A simple and delicious Filipino dessert made from mashed ripe bananas, sugar, butter, and grated coconut. It is soft, sweet, and perfect for merienda or dessert.",
@@ -90,7 +90,7 @@ Good cooking takes practice. Do not be afraid of making mistakes because they ca
     },
 
     {  image: "/7.png",
-      category: "Filipino Food",
+      alt: "Filipino Food",
       title: "A Beginner's Guide to Filipino Food",
       description:
         "Discover the delicious and diverse world of Filipino cuisine. Learn about popular dishes, unique ingredients, traditional flavors, and simple meals that are perfect for beginners",
@@ -113,7 +113,7 @@ These desserts are special to me because they are not only enjoyable to eat but 
     },
 
     { image: "/9.png",
-      category: "Food Adventures",
+      alt: "Food Adventures",
       title: "Discovering New Flavors",
       description:
         "Discover the unique flavors of Filipino cuisine through Papaitan and Kinilaw na Bolinao. These dishes offer bold, traditional tastes that showcase the creativity and diversity of Filipino cooking.",
@@ -184,8 +184,6 @@ Both dishes are worth trying for anyone who wants to discover new and authentic 
 
       </section>
 
-      {/* BLOG MODAL */}
-
       {selectedPost && (
   <div className="modal-overlay">
 
@@ -198,7 +196,6 @@ Both dishes are worth trying for anyone who wants to discover new and authentic 
         ×
       </button>
 
-      {/* IMAGE AT THE TOP */}
       {selectedPost.image && (
         <img
           src={selectedPost.image}
