@@ -1,31 +1,16 @@
 import { useState } from "react";
-import { useSearchParams, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import RecipeCard from "../components/RecipeCard";
 
 function Recipes() {
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.state?.scrollPosition !== undefined) {
-      requestAnimationFrame(() => {
-        window.scrollTo(
-          0,
-          location.state.scrollPosition
-        );
-      });
-    }
-  }, [location.state]);
-
-  const categoryFromUrl = searchParams.get("category") || "All";
-
+  
   const [category, setCategory] = useState("All");
   const recipes = [
   
     { image :"/palaka.jpg",
       alt: "Filipino",
+      category: "Filipino",
       title: "Palakang Adobo",
       time: "30 min",
       description:
@@ -34,6 +19,7 @@ function Recipes() {
     {
       image :"/papaitan.jpg",
       alt: "Filipino",
+      category: "Filipino",
       title: "Papaitan",
       time: "1 hours",
       description:
@@ -42,6 +28,7 @@ function Recipes() {
     {
       image :"/bolinao.jpg",
       alt: "Filipino",
+      category: "Filipino",
       title: "Kinilaw na Bolinao",
       time: "25 min",
       description:
@@ -50,6 +37,7 @@ function Recipes() {
     {
   image: "/adobo.jpg",
   alt: "Filipino",
+  category: "Filipino",
   title: "Adobo",
   time: "1 hour",
   description:
@@ -58,6 +46,7 @@ function Recipes() {
 },
     { image :"/sisig.jpg",
       alt: "Filipino",
+      category: "Filipino",
       title: "Chicken Sisig",
       time: "30 min",
       description:
@@ -65,6 +54,7 @@ function Recipes() {
     },
     { image :"/pares.jpg",
       alt: "Filipino",
+      category: "Filipino",
       title: "Pares ni Diwata",
       time: "30 min",
       description:
@@ -73,6 +63,7 @@ function Recipes() {
     
     { image :"/spag.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Filipino Spaghetti",
       time: "40 min",
       description:
@@ -80,6 +71,7 @@ function Recipes() {
     },
     {  image :"/creamy.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Filipino Style Carbonara ",
       time: "30 min",
       description:
@@ -87,6 +79,7 @@ function Recipes() {
     },
     {  image :"/maca.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Filipino Sweet-Style Macaroni",
       time: "30 min",
       description:
@@ -94,6 +87,7 @@ function Recipes() {
     },
     {  image :"/tuna.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Filipino-Style Tuna Pasta",
       time: "30 min",
       description:
@@ -101,6 +95,7 @@ function Recipes() {
     },
      {  image :"/palabok.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Pancit Palabok ",
       time: "30 min",
       description:
@@ -108,6 +103,7 @@ function Recipes() {
     },
     {  image :"/pancit.jpg",
       alt: "Pasta",
+      category: "Pasta",
       title: "Pancit Canton ",
       time: "20 min",
       description:
@@ -116,6 +112,7 @@ function Recipes() {
     {
       image :"/Lech flan.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Leche Flan ",
       time: "30 min",
       description:
@@ -123,6 +120,7 @@ function Recipes() {
     },
     { image :"/Halo-Halo.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Halo-Halo",
       time: "20 min",
       description:
@@ -130,6 +128,7 @@ function Recipes() {
     },
     { image :"/Mango Float.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Mango Float ",
       time: "50 min",
       description:
@@ -137,6 +136,7 @@ function Recipes() {
     },
     { image :"/Ube Halaya.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Ube Halaya",
       time: "30 min",
       description:
@@ -144,6 +144,7 @@ function Recipes() {
     },
     { image :"/Turon.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Turon",
       time: "20 min",
       description:
@@ -151,6 +152,7 @@ function Recipes() {
     },
     { image :"/Buko Pandan.jpg",
       alt: "Dessert",
+      category: "Dessert",
       title: "Buko Pandan",
       time: "30 min",
       description:
@@ -159,6 +161,7 @@ function Recipes() {
   
     {image :"/mango.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: "Mango Smoothie",
       time: "20 min",
       description:
@@ -167,6 +170,7 @@ function Recipes() {
     {
       image :"/sunset.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: " Philippine Sunset Cooler",
       time: "20 min",
       description:
@@ -175,6 +179,7 @@ function Recipes() {
      {
       image :"/ube.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: "Ube Coconut Cloud",
       time: "20 min",
       description:
@@ -183,6 +188,7 @@ function Recipes() {
     {
       image :"/barako.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: "Ube Barako Latte",
       time: "20 min",
       description:
@@ -191,6 +197,7 @@ function Recipes() {
     {
       image :"/shake.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: "Turon Shake",
       time: "20 min",
       description:
@@ -199,6 +206,7 @@ function Recipes() {
     {
       image :"/gulaman.jpg",
       alt: "Drinks",
+      category: "Drinks",
       title: "Sagot Gulaman",
       time: "20 min",
       description:
@@ -206,6 +214,7 @@ function Recipes() {
     },
 { image :"/letson.jpg",
       alt: "Main",
+      category: "Main",
       title: "Lechon",
       time: "3 hours",
       description:
@@ -216,6 +225,7 @@ function Recipes() {
 {
   image: "/Sin.jpg",
   alt: "Main",
+  category: "Main",
   title: "Sinigang",
   time: "1 hour",
   description:
@@ -224,7 +234,8 @@ function Recipes() {
 {
   image: "/kare.jpg",
   alt: "Main",
-  title: "Kare-Kare",
+  category: "Main",
+  tItle: "Kare-Kare",
   time: "3 hours",
   description:
     "A creamy Filipino stew made with meat, vegetables, and rich peanut sauce."
@@ -234,6 +245,7 @@ function Recipes() {
 {
   image: "/lupak.jpg",
   alt: "Main",
+  Category: "Main",
   title: "Nilupak na Saging",
   time: "20 min",
   description:
@@ -242,6 +254,7 @@ function Recipes() {
 {
   image: "/ubod.jpg",
   alt: "Main",
+ category: "Main",
   title: "Ubod ng Saging with Manok",
   time: "45 min",
   description:
@@ -250,6 +263,7 @@ function Recipes() {
 {
   image: "/bibingka.jpg",
   alt: "Main",
+  category: "Main",
   title: "Bibingka",
   time: "40 min",
   description:
@@ -259,6 +273,7 @@ function Recipes() {
 {
   image: "/calamansi.jpg",
   alt: "Main",
+  category: "Main",
   title: "Calamansi Juice",
   time: "10 min",
   description:
@@ -267,6 +282,7 @@ function Recipes() {
 {
   image: "/monggo.jpg",
   alt: "Main",
+  category: "Main",
   title: "Monggo",
   time: "30 min",
   description:
@@ -275,6 +291,7 @@ function Recipes() {
 {
   image: "/buko.jpg",
   alt: "Main",
+  category: "Main",
   title: "Buko Juice",
   time: "10 min",
   description:
